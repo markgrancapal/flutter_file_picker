@@ -348,6 +348,8 @@ didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls{
     [self handleResult: pickedVideoUrl != nil ? pickedVideoUrl : pickedImageUrl];
 }
 
+#ifdef PHPicker
+
 -(void)picker:(PHPickerViewController *)picker didFinishPicking:(NSArray<PHPickerResult *> *)results API_AVAILABLE(ios(14)){
     
     Log(@"Picker:%@ didFinishPicking:%@", picker, results);
@@ -377,6 +379,8 @@ didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls{
         [self handleResult:urls];
     });
 }
+
+#endif
 
 
 // AudioPicker delegate
