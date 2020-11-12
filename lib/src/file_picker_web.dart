@@ -88,7 +88,7 @@ class FilePickerWeb extends FilePicker {
 
         final FileReader reader = FileReader();
         reader.onLoadEnd.listen((e) {
-          addPickedFile(file, reader.result, null);
+          addPickedFile(file, reader.result, Url.createObjectUrl(file));
         });
         reader.readAsArrayBuffer(file);
       });
